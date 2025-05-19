@@ -279,6 +279,61 @@
           </div>
         </div>
       </section>
+<!-- Schedule Section -->
+<section class="my-5" id="schedule" data-aos="fade-up">
+  <h3 class="text-center">Book a Training Session</h3>
+  <p class="text-center mb-4">Login to schedule a 1-hour block for dog training</p>
+
+  <!-- Login Form -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm">
+        <h5 class="card-title">Login</h5>
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" required />
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Schedule Grid -->
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card p-4 shadow-sm">
+        <h5 class="card-title">Available Time Blocks</h5>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+          <!-- Example Time Blocks -->
+          <div class="col">
+            <button class="btn btn-outline-success w-100">9:00 AM - 10:00 AM</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-success w-100">10:00 AM - 11:00 AM</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-success w-100">11:00 AM - 12:00 PM</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-success w-100">1:00 PM - 2:00 PM</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-success w-100">2:00 PM - 3:00 PM</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-success w-100">3:00 PM - 4:00 PM</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- Contact Form -->
       <section class="my-5" id="contact" data-aos="fade-up">
@@ -353,6 +408,24 @@
           currentTheme === "dark" ? "light" : "dark"
         );
       }
+      
     </script>
+    <script>
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    alert(`Logged in as ${email} (demo only)`);
+    // Real login logic would go here
+  });
+
+  document.querySelectorAll('#schedule .btn-outline-success').forEach(button => {
+    button.addEventListener('click', () => {
+      alert(`You selected: ${button.textContent} (demo only)`);
+      // Here you could mark as reserved, send data to server, etc.
+    });
+  });
+</script>
+
   </body>
 </html>
